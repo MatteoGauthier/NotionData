@@ -4,7 +4,7 @@ Fetch Notion page with puppeteer
 
 # Todos
 
-- [ ] Fetch Page Title and Add it at the top of the file
+- [x] Fetch Page Title and Add it at the top of the file
 - [ ] Write Data to a markdown file with page.title for name
 - [ ] Implement git to push to github
   - [ ] Add to HEAD
