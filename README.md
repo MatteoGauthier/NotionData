@@ -1,6 +1,10 @@
 # NotionData
 Fetch Notion page with puppeteer
 
+# Options
+```bash
+npm start [Input Notion Url] [Output-File-Name.md]
+```
 
 # Todos
 

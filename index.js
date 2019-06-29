@@ -1,7 +1,16 @@
 const request = require('request'), argv = require('yargs').argv, puppeteer = require("puppeteer"), clipboardy = require("clipboardy"), player = require("node-wav-player"), getUrls = require("get-urls"), fs = require("fs");
 var pageTitle;
-var file_path = "test.md";
+var arguments = process.argv.slice(2);
+console.log(arguments)
+var urlToFetch = arguments[0]; // Input
+var file_path = arguments[1]; // Output
 
+const urltest = arguments.length === 2 ? true : false;
+if (!urltest) {
+  throw new Error("Not enough argument")
+}
+
+console.log("Input : ", urlToFetch, " Output : ", file_path)
 insert = function insert(main_string, ins_string, pos) {
   if (typeof pos == "undefined") {
     pos = 0;
@@ -18,27 +27,8 @@ const getData = async () => {
   });
   const page = await browser.newPage();
 
-  // await page.setRequestInterception(true);
-  // page.on("request", interceptedRequest => {
-  //   var result;
-
-  //   (async () => {
-  //     result = await interceptedRequest.response();
-
-  //     console.log(result);
-  //   })();
-
-  //   if (
-  //     interceptedRequest.url().endsWith(".png") ||
-  //     interceptedRequest.url().endsWith(".jpg")
-  //   ) {
-  //     // console.log(interceptedRequest)
-  //     interceptedRequest.abort();
-  //   } else interceptedRequest.continue();
-  // });
-
   await page.goto(
-    "https://www.notion.so/Review-ScreenToGif-a1135437c65240718707677d108c7034"
+    urlToFetch
   );
 
   await page.waitFor(10000);
@@ -49,6 +39,7 @@ const getData = async () => {
 
   var data = clipboardy.readSync();
 
+  await browser.close();
   return data;
 };
 
