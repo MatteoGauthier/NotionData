@@ -5,7 +5,7 @@ dependencies:
   play: 0.5.0
   play-sound: 1.1.3
   prompts: 2.3.2
-  puppeteer: 4.0.0
+  puppeteer: 5.0.0
   request: 2.88.2
   yargs: 15.3.1
 lockfileVersion: 5.1
@@ -624,6 +624,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+  /pkg-dir/4.2.0:
+    dependencies:
+      find-up: 4.1.0
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   /play-sound/1.1.3:
     dependencies:
       find-exec: 1.0.1
@@ -672,13 +680,14 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  /puppeteer/4.0.0:
+  /puppeteer/5.0.0:
     dependencies:
       debug: 4.1.1
       extract-zip: 2.0.1
       https-proxy-agent: 4.0.0
       mime: 2.4.4
       mitt: 2.0.1
+      pkg-dir: 4.2.0
       progress: 2.0.3
       proxy-from-env: 1.0.0
       rimraf: 3.0.2
@@ -690,7 +699,7 @@ packages:
       node: '>=10.18.1'
     requiresBuild: true
     resolution:
-      integrity: sha512-yNshT0M5DWfZ8DQoduZuGYpcwqXxKOZdgt5G0IF5VEKbydaDbWP/f5pQRfzQ4e+a4w0Rge3uzcogHeUPQM8nCA==
+      integrity: sha512-JnZcgRQnfowRSJoSHteKU7G9fP/YYGB/juPn8m4jNqtzvR0h8GOoFmdjTBesJFfzhYkPU1FosHXnBVUB++xgaA==
   /qs/6.5.2:
     dev: false
     engines:
@@ -1010,6 +1019,6 @@ specifiers:
   play: ^0.5.0
   play-sound: ^1.1.3
   prompts: ^2.1.0
-  puppeteer: ^4.0.0
+  puppeteer: ^5.0.0
   request: ^2.88.0
   yargs: ^15.0.0
